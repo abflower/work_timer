@@ -4,7 +4,7 @@ A flask timer discretely open in the browser tells you how much has passed of a 
 Want to know how long you have left of your working day? 
 Need to keep an eye on how much time you have left to do something?
 
-This timer is a simple flask application, with a purposedly super low key graphics.
+This timer is a simple flask application, with purposedly super low key graphics.
 In the first screen you are asked to input start and finish time in 00:00 format.
 In the actual timer page a purely ASCII progress bar shows the progress and percentage is also given.
 
