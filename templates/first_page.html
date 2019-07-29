@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<p>Specify time in 24h format (e.g. 14:30)</p>
+<form action="http://localhost:4000/" method="POST">
+  {% for field in form %}
+    <div>{{ field.label}}<br>
+        {{ field }}</div>
+  {% endfor %}
+<p><input type=submit value='Start timer'></p>
+    </form>
+</body>
+</html>
