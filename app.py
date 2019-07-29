@@ -27,7 +27,7 @@ def return_result():
         localtime_min = return_localtime()
         completed_slots = (localtime_min-convert_time_into_min(time_start))//15
         bar = '[{}{}]'.format ('▒'*completed_slots, '░'*(slots_nr-completed_slots))
-        percent = (((localtime_min-job_day_min)/job_day_min)*100.)
+        percent = (((localtime_min-convert_time_into_min(time_start))/job_day_min)*100)
         percent = round(percent, 1)
         percent_str = 'You are at: {}%'.format(percent)
         return [bar, percent_str, percent]
@@ -45,6 +45,7 @@ def index():
         time_end = form1.time_end.data
         job_day_min = convert_time_into_min(time_end) - convert_time_into_min(time_start)
         slots_nr = job_day_min//15
+        print(time_start, time_end, job_day_min, slots_nr)
         return redirect(url_for('timer'))
 
     return render_template('first_page.html', form=form1)
