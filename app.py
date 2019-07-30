@@ -49,7 +49,7 @@ def index():
 
     return render_template('first_page.html', form=form1)
 
-@app.route('/timer', methods=['GET', 'POST'])
+@app.route('/timer')
 def timer():
     percent = return_result()[2]
     result_graph = return_result()[0]
