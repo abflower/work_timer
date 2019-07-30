@@ -22,7 +22,7 @@ slots_nr = ''
 
 def return_result():
     if return_localtime() < convert_time_into_min(time_start):
-        return (['You should not be at work!', '', '--'])
+        return ["We haven't started yet!", '', '--']
     elif return_localtime() < convert_time_into_min(time_end):
         localtime_min = return_localtime()
         completed_slots = (localtime_min-convert_time_into_min(time_start))//15
@@ -32,7 +32,7 @@ def return_result():
         percent_str = 'You are at: {}%'.format(percent)
         return [bar, percent_str, percent]
     else:
-        return(['Thou didst it!','',100])
+        return(['You did it!','',100])
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -45,7 +45,6 @@ def index():
         time_end = form1.time_end.data
         job_day_min = convert_time_into_min(time_end) - convert_time_into_min(time_start)
         slots_nr = job_day_min//15
-        print(time_start, time_end, job_day_min, slots_nr)
         return redirect(url_for('timer'))
 
     return render_template('first_page.html', form=form1)
